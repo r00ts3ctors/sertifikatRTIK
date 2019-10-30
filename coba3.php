@@ -1,34 +1,26 @@
 <?php
-
 //Set the Content Type
-header('Content-type: image/png');
+
+$jpg_image = imagecreatefromjpeg('Sertifikat/coba4.jpg'); // posisi Sertifikat Master
+$white = imagecolorallocate($jpg_image, 0, 255, 0); // warna2 huruf yang akan di pakai
+$font_path = 'C:\Windows\Fonts\Sitka.ttc'; // posisi huruf yang akan di gunakan
 
 
-
-// Create Image From Existing File
-$jpg_image = imagecreatefrompng('Sertifikat/coba.png');
-
-// Allocate A Color For The Text
-$white = imagecolorallocate($jpg_image, 0, 255, 0);
-
-// Set Path to Font File
-$font_path = 'C:\Windows\Fonts\Sitka.ttc';
-
-// Set Text to Be Printed On Image
+// Set Text to Be Printed On Image atau text yang akan di gunakan
 $text = "Fakrullah Maulana";
 $text2 = "fakrullah maulan";
-$text3 = "fakrullah maulan";
-
-// Print Text On Image
-imagettftext($jpg_image, 55, 0, 1250, 890, $white, $font_path, $text,);
-// imagettftext($jpg_image, 55, 0, 200, 890, $white, $font_path, $text2,);
 // imagettftext($jpg_image, 55, 0, 400, 890, $white, $font_path, $text2,);
 // imagettftext($jpg_image, 10, 45, $x, $y, $white, $font_path, 'Powered by PHP ' . phpversion());
-// Send Image to Browser
-print_r(imagepng($jpg_image));
-// imagepng($jpg_image, "out.png");
+
+
+
+
 
 // Clear Memory
+// Send Image to Browser
+header('Content-type: image/png');
+// imagepng($jpg_image, "out.png");
+imagepng($jpg_image);
 imagedestroy($jpg_image);
 
  ?>

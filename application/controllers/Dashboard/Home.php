@@ -18,8 +18,12 @@ class Home extends CI_Controller{
 
   // register kegiatan yang tersedia saat ini .
   public function register(){
-    // code...
+    $data = array(
+      'konten' => 'dashboard/register', // daftar atau ikut pelatihan yang di selenggarakan.
+   );
+    $this->load->view('dashboard/index',$data);
+
   }
 
-  
+
 }
