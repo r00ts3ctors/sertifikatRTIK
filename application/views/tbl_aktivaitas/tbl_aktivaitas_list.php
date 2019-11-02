@@ -10,10 +10,10 @@
         </style>
     </head>
     <body>
-        <h2 style="margin-top:0px">Register List</h2>
+        <h2 style="margin-top:0px">Tbl_aktivaitas List</h2>
         <div class="row" style="margin-bottom: 10px">
             <div class="col-md-4">
-                <?php echo anchor(site_url('register/create'),'Create', 'class="btn btn-primary"'); ?>
+                <?php echo anchor(site_url('tbl_aktivaitas/create'),'Create', 'class="btn btn-primary"'); ?>
             </div>
             <div class="col-md-4 text-center">
                 <div style="margin-top: 8px" id="message">
@@ -23,7 +23,7 @@
             <div class="col-md-1 text-right">
             </div>
             <div class="col-md-3 text-right">
-                <form action="<?php echo site_url('register/index'); ?>" class="form-inline" method="get">
+                <form action="<?php echo site_url('tbl_aktivaitas/index'); ?>" class="form-inline" method="get">
                     <div class="input-group">
                         <input type="text" class="form-control" name="q" value="<?php echo $q; ?>">
                         <span class="input-group-btn">
@@ -31,7 +31,7 @@
                                 if ($q <> '')
                                 {
                                     ?>
-                                    <a href="<?php echo site_url('register'); ?>" class="btn btn-default">Reset</a>
+                                    <a href="<?php echo site_url('tbl_aktivaitas'); ?>" class="btn btn-default">Reset</a>
                                     <?php
                                 }
                             ?>
@@ -44,38 +44,30 @@
         <table class="table table-bordered" style="margin-bottom: 10px">
             <tr>
                 <th>No</th>
-		<th>Noreg</th>
-		<th>Idkegiatan</th>
-		<th>Nama</th>
-		<th>Email</th>
-		<th>Telepon</th>
+		<th>IdKegiatan</th>
+		<th>IdPeserta</th>
+		<th>NoSertifikat</th>
 		<th>Status</th>
-		<th>LinkSertifikat</th>
-		<th>LinkBarcode</th>
-		<th>TglRegister</th>
+		<th>LinkSertifkat</th>
 		<th>Action</th>
             </tr><?php
-            foreach ($register_data as $register)
+            foreach ($tbl_aktivaitas_data as $tbl_aktivaitas)
             {
                 ?>
                 <tr>
 			<td width="80px"><?php echo ++$start ?></td>
-			<td><?php echo $register->noreg ?></td>
-			<td><?php echo $register->idkegiatan ?></td>
-			<td><?php echo $register->nama ?></td>
-			<td><?php echo $register->email ?></td>
-			<td><?php echo $register->telepon ?></td>
-			<td><?php echo $register->status ?></td>
-			<td><?php echo $register->linkSertifikat ?></td>
-			<td><?php echo $register->linkBarcode ?></td>
-			<td><?php echo $register->tglRegister ?></td>
+			<td><?php echo $tbl_aktivaitas->idKegiatan ?></td>
+			<td><?php echo $tbl_aktivaitas->idPeserta ?></td>
+			<td><?php echo $tbl_aktivaitas->noSertifikat ?></td>
+			<td><?php echo $tbl_aktivaitas->status ?></td>
+			<td><?php echo $tbl_aktivaitas->linkSertifkat ?></td>
 			<td style="text-align:center" width="200px">
 				<?php 
-				echo anchor(site_url('register/read/'.$register->id),'Read'); 
+				echo anchor(site_url('tbl_aktivaitas/read/'.$tbl_aktivaitas->idAktivitas),'Read'); 
 				echo ' | '; 
-				echo anchor(site_url('register/update/'.$register->id),'Update'); 
+				echo anchor(site_url('tbl_aktivaitas/update/'.$tbl_aktivaitas->idAktivitas),'Update'); 
 				echo ' | '; 
-				echo anchor(site_url('register/delete/'.$register->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+				echo anchor(site_url('tbl_aktivaitas/delete/'.$tbl_aktivaitas->idAktivitas),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
 				?>
 			</td>
 		</tr>
@@ -86,6 +78,7 @@
         <div class="row">
             <div class="col-md-6">
                 <a href="#" class="btn btn-primary">Total Record : <?php echo $total_rows ?></a>
+		<?php echo anchor(site_url('tbl_aktivaitas/excel'), 'Excel', 'class="btn btn-primary"'); ?>
 	    </div>
             <div class="col-md-6 text-right">
                 <?php echo $pagination ?>

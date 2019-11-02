@@ -6,18 +6,20 @@ class Home extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
-    //Codeigniter : Write Less Do More
-    $this->load->model('Kegiatan_model');
-    $this->load->library('form_validation');
-    $this->load->helper(array('Sertifikat_helper'));
+
   }
 
   function index()  {
 
+    
     $data = array(
       'konten' => 'dashboard/konten',
      );
+
      $this->load->view('dashboard/index',$data);
+
+
+
   }
 
 
