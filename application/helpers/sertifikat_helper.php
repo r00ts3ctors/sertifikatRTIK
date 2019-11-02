@@ -1,18 +1,18 @@
 <?php
 
-$datasertifikat = array(
-  'nama' => ucfirst(strtolower('Maulana maulana')),
-  'sebagai' => '20 November 2019',
-  'tgl' => '20 November 2019',
-  'nomor' => '123ABC',
-  'tema1' => 'Digital Ekonomi',
-  'tema2' => '20 November 2019',
- );
+// $datasertifikat = array(
+//   'nama' => ucfirst(strtolower('Maulana maulana')),
+//   'sebagai' => '20 November 2019',
+//   'tgl' => '20 November 2019',
+//   'nomor' => '123ABC',
+//   'tema1' => 'Digital Ekonomi',
+//   'tema2' => '20 November 2019',
+//  );
 
 
-function cetak($datasertifikat )
+function cetak($datasertifikat)
 {
-  header('Content-type: image/png');
+  header('Content-type: image/jpeg');
   // code...
   $template = imagecreatefromjpeg(base_url('assets/template/sertifikat.jpg')); // posisi Sertifikat Master
   // warna huruf
@@ -20,10 +20,10 @@ function cetak($datasertifikat )
   $warna_nama = imagecolorallocate($template, 0, 191, 255);
 
   // jenis huruf
-  $huruf_nama = __DIR__.'\font\Pictorial Signature.ttf';
-  $huruf_tanggal = __DIR__.'\font\Montserrat-Italic.ttf';
-  $huruf_tema =  __DIR__. '\font\Montserrat-ExtraBold.ttf';
-  $huruf_peserta =  __DIR__. '\font\Montserrat-BlackItalic.ttf';
+  $huruf_nama = __DIR__.'/font/Pictorial Signature.ttf';
+  $huruf_tanggal = __DIR__.'/font/Montserrat-Italic.ttf';
+  $huruf_tema =  __DIR__. '/font/Montserrat-ExtraBold.ttf';
+  $huruf_peserta =  __DIR__.'/font/Montserrat-BlackItalic.ttf';
 
   // text inputan
 
@@ -45,7 +45,7 @@ function cetak($datasertifikat )
   imagettftext($template, 30, 0, 2960, 2383, $hitam, $huruf_tema, $nomor);
 
 
-  imagepng($template);
+  imagejpeg($template);
   imagedestroy($template);
   // imagepng($template, "out.png");
 

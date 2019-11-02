@@ -2,15 +2,11 @@
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
 
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
               <i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
           </div>
-
-          <div class="row">
-            <?=$this->session->flashdata('msg') ?>
-
-          </div>
-          <!-- Content Row -->
+          <?=$this->session->flashdata('msg') ?>
           <div class="row">
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
@@ -102,8 +98,8 @@
                       <thead>
                         <tr class="text-center">
                           <th>No.</th>
-                          <th>Judul Kegiatan</th>
-                          <th>No Registrasi</th>
+                          <th>Nama Kegiatan</th>
+                          <th>No Sertifikat</th>
                           <th>Tanggal</th>
                           <th>Tempat</th>
                           <th>Link Sertifikat</th>
@@ -111,23 +107,39 @@
                       </thead>
 
                       <tbody>
-                        <tr>
-                          <td>1.</td>
-                          <td>Judul Kegiatan Kita</td>
-                          <td>123567</td>
-                          <td>20 - Februari 2019</td>
-                          <td>Papua Barat</td>
-                          <td class="text-center">link</td>
-                        </tr>
+                        <?php
+                        /*
+                        [namakegiatan] => Festik 2019
+                          [tema] => LITERASI DIGITAL & PERKEM LITERASI DIGITAL & PERKEM
+                          [tema1] => -
+                          [tema2] => -
+                          [tanggalkegiatan] => Sabtu / 23 November 2019
+                          [wilayahkegiatan] => Pangkal Pinang
+                          [tempatkegiatan] => Pangkal Pinang
+                          [namapeserta] => Fakrullah
+                          [emailpeserta] => emi@kdl.com
+                          [tlppeserta] => user
+                          [wilayahpeserta] => Adas
+                          [nosertifikat] => ABC123
+                          [linksertifikat] => -
+                        */
+                        foreach ($datasertifkat as $v) {
 
-                        <tr>
-                          <td>2.</td>
-                          <td>Judul Kegiatan Kita</td>
-                          <td>123567</td>
-                          <td>20 - Februari 2019</td>
-                          <td>Papua Barat</td>
-                          <td class="text-center">link</td>
-                        </tr>
+                          $nomor = 1;
+                          ?>
+                          <tr>
+                            <td><?=
+
+                             $nomor++; ?></td>
+                            <td><?=$v->namakegiatan?></td>
+                            <td><?=$v->nosertifikat ?></td>
+                            <td><?=$v->tanggalkegiatan ?></td>
+                            <td><?=$v->wilayahkegiatan ?></td>
+                            <td class="text-center">link</td>
+                          </tr>
+
+
+                        <?php } ?>
 
 
                       </tbody>

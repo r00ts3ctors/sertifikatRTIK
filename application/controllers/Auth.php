@@ -36,6 +36,7 @@ class Auth extends CI_Controller{
     if ($user) {
       if (password_verify($password, $user['password'])) {
         $data = array(
+          'idPeserta' => $user['idPeserta'] ,
           'nama' => $user['namaPeserta'] ,
           'email' => $user['email'] ,
           'telepon' => $user['telepon'] ,
@@ -47,8 +48,9 @@ class Auth extends CI_Controller{
           'level' => $user['level'] ,
         );
 
+        var_dump($data);
         $this->session->set_userdata($data);
-        $this->session->set_flashdata('msg', '<div class="alert alert-primary"> Selamat Datang </div>');
+        $this->session->set_flashdata('msg', '<div class="alert alert-warning"> Selamat Datang Kembali <strong> '.$data['nama'].' </strong> Pastikan anda mengikuti semua pelatihan yang berkualitas di sini.</div>');
         redirect('Dashboard/Home');
 
       }
@@ -101,6 +103,13 @@ class Auth extends CI_Controller{
       $this->session->set_flashdata('msg', '<div class="alert alert-success"> Selamat anda Terdaftar silahkan login </div>');
       redirect('Auth');
     }
+  }
+
+  public function logout()
+  {
+    $this->session->sess_destroy();
+    redirect('Auth/index');
+    // code...
   }
 
 
