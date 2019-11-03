@@ -17,6 +17,10 @@
             <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama" value="<?php echo $nama; ?>" />
         </div>
 	    <div class="form-group">
+            <label for="varchar">Katagori <?php echo form_error('katagori') ?></label>
+            <input type="text" class="form-control" name="katagori" id="katagori" placeholder="Katagori" value="<?php echo $katagori; ?>" />
+        </div>
+	    <div class="form-group">
             <label for="varchar">Tema <?php echo form_error('tema') ?></label>
             <input type="text" class="form-control" name="tema" id="tema" placeholder="Tema" value="<?php echo $tema; ?>" />
         </div>

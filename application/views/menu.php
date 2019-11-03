@@ -14,7 +14,7 @@
 
   <!-- Nav Item - Dashboard -->
   <li class="nav-item active">
-    <a class="nav-link" href="index.html">
+    <a class="nav-link" href="<?php echo base_url('dashboard') ?>">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Dashboard</span></a>
   </li>
@@ -36,9 +36,8 @@
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
         <!-- <h6 class="collapse-header">List:</h6> -->
-        <a class="collapse-item" href="buttons.html">List Sertifikat</a>
-        <a class="collapse-item" href="cards.html">Daftar Kegiatan</a>
-        <a class="collapse-item" href="cards.html">List Kegiatan</a>
+        <a class="collapse-item" href="<?php echo base_url('list') ?>">List Sertifikat</a>
+        <a class="collapse-item" href="<?php echo base_url('register') ?>">Daftar Kegiatan</a>
       </div>
     </div>
   </li>

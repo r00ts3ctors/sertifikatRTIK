@@ -1,5 +1,7 @@
 # Cetak-Gambar
 
+CMS ini di rancang untuk kebutuhan melakukan inventarisir kegiatan seperti pelatihan, workshop dan seminar.
+
 Rancangan code ini akan di arahkan untuk memberikan kemudahan bagi lembaga kursus di indonesia untuk menerapkan sistem esertifikasi, dimana era 4.0 saat ini sudah
 semestinya menerapkan serba digital
 

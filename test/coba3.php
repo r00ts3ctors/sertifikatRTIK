@@ -1,5 +1,6 @@
 <?php
-// header('Content-type: image/jpeg');
+
+header('Content-type: image/jpeg');
 $template = imagecreatefromjpeg('assets/template/sertifikat.jpg'); // posisi Sertifikat Master
 $hitam = imagecolorallocate($template, 0, 0, 0); // warna2 huruf yang akan di pakai
 

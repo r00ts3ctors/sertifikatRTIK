@@ -90,7 +90,7 @@
             <div class="container-fluid">
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">List Sertifikat</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">DAFTAR SERTIFIKAT ANDA. </h6>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -98,48 +98,42 @@
                       <thead>
                         <tr class="text-center">
                           <th>No.</th>
-                          <th>Nama Kegiatan</th>
-                          <th>No Sertifikat</th>
-                          <th>Tanggal</th>
-                          <th>Tempat</th>
-                          <th>Link Sertifikat</th>
+                          <th>Kegiatan</th>
+                          <th>Tema</th>
+                          <th>No.Sertifkat</th>
                         </tr>
                       </thead>
 
                       <tbody>
                         <?php
-                        /*
-                        [namakegiatan] => Festik 2019
-                          [tema] => LITERASI DIGITAL & PERKEM LITERASI DIGITAL & PERKEM
-                          [tema1] => -
-                          [tema2] => -
-                          [tanggalkegiatan] => Sabtu / 23 November 2019
-                          [wilayahkegiatan] => Pangkal Pinang
-                          [tempatkegiatan] => Pangkal Pinang
-                          [namapeserta] => Fakrullah
-                          [emailpeserta] => emi@kdl.com
-                          [tlppeserta] => user
-                          [wilayahpeserta] => Adas
-                          [nosertifikat] => ABC123
-                          [linksertifikat] => -
-                        */
+
+                        $nomor = 1;
                         foreach ($datasertifkat as $v) {
+                          if ($v->idpeserta == $this->session->userdata('idPeserta')) { ?>
+                            <tr>
+                              <td class="text-center"><?= $nomor++; ?>.</td>
+                              <td><?=$v->namakegiatan?></td>
+                              <td><?=ucfirst(strtolower($v->tema . " ". $v->tema1 . " " .$v->tema2)) ?></td>
+                              <td class="text-center">
+                                <?php
+                                  if ($v->status == 0) {
+                                    echo "<span class='badge badge-danger'>Belum Hadir</span>";
+                                  }
+                                  else { ?>
+                                    <a href="<?= base_url('nosertifikat/').$v->nosertifikat ?>" target="_blank">
+                                      <span class="badge badge-light"><?=$v->nosertifikat ?></span>
+                                    </a>
 
-                          $nomor = 1;
-                          ?>
-                          <tr>
-                            <td><?=
+                                  <?php }
 
-                             $nomor++; ?></td>
-                            <td><?=$v->namakegiatan?></td>
-                            <td><?=$v->nosertifikat ?></td>
-                            <td><?=$v->tanggalkegiatan ?></td>
-                            <td><?=$v->wilayahkegiatan ?></td>
-                            <td class="text-center">link</td>
-                          </tr>
+                                 ?>
 
 
-                        <?php } ?>
+                              </td>
+                            </tr>
+                          <?php }
+
+                         } ?>
 
 
                       </tbody>

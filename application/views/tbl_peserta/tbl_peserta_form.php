@@ -52,6 +52,10 @@
             <label for="varchar">Password <?php echo form_error('password') ?></label>
             <input type="text" class="form-control" name="password" id="password" placeholder="Password" value="<?php echo $password; ?>" />
         </div>
+	    <div class="form-group">
+            <label for="int">Level <?php echo form_error('level') ?></label>
+            <input type="text" class="form-control" name="level" id="level" placeholder="Level" value="<?php echo $level; ?>" />
+        </div>
 	    <input type="hidden" name="idPeserta" value="<?php echo $idPeserta; ?>" /> 
 	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
 	    <a href="<?php echo site_url('tbl_peserta') ?>" class="btn btn-default">Cancel</a>

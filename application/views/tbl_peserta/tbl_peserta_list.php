@@ -54,6 +54,7 @@
 		<th>Tgldaftar</th>
 		<th>Foto</th>
 		<th>Password</th>
+		<th>Level</th>
 		<th>Action</th>
             </tr><?php
             foreach ($tbl_peserta_data as $tbl_peserta)
@@ -71,6 +72,7 @@
 			<td><?php echo $tbl_peserta->tgldaftar ?></td>
 			<td><?php echo $tbl_peserta->foto ?></td>
 			<td><?php echo $tbl_peserta->password ?></td>
+			<td><?php echo $tbl_peserta->level ?></td>
 			<td style="text-align:center" width="200px">
 				<?php 
 				echo anchor(site_url('tbl_peserta/read/'.$tbl_peserta->idPeserta),'Read'); 

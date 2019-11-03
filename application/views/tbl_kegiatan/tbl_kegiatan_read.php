@@ -13,6 +13,7 @@
         <h2 style="margin-top:0px">Tbl_kegiatan Read</h2>
         <table class="table">
 	    <tr><td>Nama</td><td><?php echo $nama; ?></td></tr>
+	    <tr><td>Katagori</td><td><?php echo $katagori; ?></td></tr>
 	    <tr><td>Tema</td><td><?php echo $tema; ?></td></tr>
 	    <tr><td>Tema1</td><td><?php echo $tema1; ?></td></tr>
 	    <tr><td>Tema2</td><td><?php echo $tema2; ?></td></tr>

@@ -1,0 +1,4 @@
+https://www.tutsmake.com/codeigniter-all-join-query-with-example/
+https://code.tutsplus.com/id/tutorials/codeigniter-form-validation-from-start-to-finish--cms-28768
+
+ALTER TABLE `tbl_kegiatan` CHANGE `status_kegiatan` `status_kegiatan` INT(11) NOT NULL COMMENT '1=Aktif 0= UnAktif';

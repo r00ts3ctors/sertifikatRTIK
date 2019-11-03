@@ -45,6 +45,7 @@
             <tr>
                 <th>No</th>
 		<th>Nama</th>
+		<th>Katagori</th>
 		<th>Tema</th>
 		<th>Tema1</th>
 		<th>Tema2</th>
@@ -68,6 +69,7 @@
                 <tr>
 			<td width="80px"><?php echo ++$start ?></td>
 			<td><?php echo $tbl_kegiatan->nama ?></td>
+			<td><?php echo $tbl_kegiatan->katagori ?></td>
 			<td><?php echo $tbl_kegiatan->tema ?></td>
 			<td><?php echo $tbl_kegiatan->tema1 ?></td>
 			<td><?php echo $tbl_kegiatan->tema2 ?></td>

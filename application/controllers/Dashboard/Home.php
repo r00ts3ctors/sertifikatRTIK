@@ -10,8 +10,8 @@ class Home extends CI_Controller{
     $this->load->model(array('Member_model'));
   }
 
-  function index()  {
 
+  function index()  {
     $user['user'] = $this->db->get_where('tbl_peserta', ['telepon' => $this->session->userdata['telepon']])->row_array();
     $data = array(
       'konten' => 'dashboard/konten',
@@ -28,26 +28,46 @@ class Home extends CI_Controller{
 
   // register kegiatan yang tersedia saat ini .
   public function register(){
+
+
     $data = array(
       'konten' => 'dashboard/register', // daftar atau ikut pelatihan yang di selenggarakan.
+      'kegiatan' => $this->Member_model->listKegaitan(),
    );
+
     $this->load->view('dashboard/index',$data);
 
   }
 
-  public function coba()
+  public function takePelatihan($id)
   {
-    // code...
+    // random_string('alnum',5);
+    $this->load->helper('string');
+    $peserta = $this->db->get_where('tbl_peserta', ['idPeserta' => $this->session->userdata('idPeserta')])->row_array();
+    $kegiatan = $this->db->get_where('tbl_kegiatan', ['idKegiatan' => $id])->row_array();
 
-    $member = $this->session->userdata['idPeserta'];
+    $this->db->where('idKegiatan =', $id);
+    $this->db->where('idPeserta =',   $peserta['idPeserta']);
+    $aktivitasStatus = $this->db->get('tbl_aktivaitas')->num_rows();
 
-    $query = $this->Member_model->listdatasertifikat($member);
-
-    echo "<pre>";
-    print_r($query);
-    echo "</pre>";
+    if ($aktivitasStatus == 0) {
+      $dataAktivitas = array(
+        'idKegiatan' => $id,
+        'idPeserta' => $peserta['idPeserta'],
+        'noSertifikat' => strtoupper(random_string('alnum',6)),
+        'status' => 0,
+      );
+      $this->db->insert('tbl_aktivaitas', $dataAktivitas);
+      $this->session->set_flashdata('msg', '<div class="alert alert-success">Selamat Pendaftaran Kegiatan Berhasil.</div>');
+      redirect('register');
+    }
+    else {
+      $this->session->set_flashdata('msg', '<div class="alert alert-warning">Gagal, Anda Telah mendaftar Sebelumnya.</div>');
+      redirect('register');
+    }
 
   }
+
 
 
   public function mySertifikat()
@@ -64,5 +84,16 @@ class Home extends CI_Controller{
      );
     cetak($datasertifikat);
   }
+
+  public function listSertifikat() {
+    $user['user'] = $this->db->get_where('tbl_peserta', ['telepon' => $this->session->userdata['telepon']])->row_array();
+    $data = array(
+      'konten' => 'dashboard/list_pelatihan',
+      'datasertifkat' => $this->Member_model->listdatasertifikat($user['user']['idPeserta']),
+    );
+    $this->load->view('dashboard/index', $data);
+  }
+
+
 
 }
