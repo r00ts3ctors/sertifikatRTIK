@@ -10,7 +10,7 @@ Core ini di bangun dengan menggunakan php, sebagai bahasa pemogramannya dan akan
 Semoga Membantu
 
 
-Fakrullah Maulana
+Mr. Fakrullah Maulana
 atjehcyber@gmail.com
 
 #Jasa Pengembangan IT untuk semua kebutuhan kontak saya
