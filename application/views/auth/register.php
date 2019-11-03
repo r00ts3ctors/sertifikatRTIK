@@ -68,7 +68,7 @@
                   </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-user btn-block"> Register Account </button>
-                <!-- <a href="<?php echo base_url('auth/registrasi') ?>"  class="btn btn-warning btn-user btn-block"> Login </a> -->
+
                 <div class="row">
                   <div class="col-lg-6">
 
@@ -79,8 +79,9 @@
 
                 </div>
               </form>
+              <hr />
+                    <a href="<?php echo base_url('auth/login') ?>"  class="btn btn-warning btn-user btn-block"> Login </a>
             </div>
-            <p class="text-center">Daftar Akun anda dengan benar dan sesuai, agar sertifikat yang anda dapat sesuai, setelah daftar anda dapat login dan pilih pelatihan yang ingin di ikuti pada halaman member anda semoga memberikan kemudahan dalam mendapatkan kegiatan yang sangat bermanfaat</p>
           </div>
         </div>
       </div>

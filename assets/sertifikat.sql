@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 03, 2019 at 05:10 PM
+-- Generation Time: Nov 03, 2019 at 07:30 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.1.32
 
@@ -37,15 +37,6 @@ CREATE TABLE `tbl_aktivaitas` (
   `linkSertifkat` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tbl_aktivaitas`
---
-
-INSERT INTO `tbl_aktivaitas` (`idAktivitas`, `idKegiatan`, `idPeserta`, `noSertifikat`, `status`, `linkSertifkat`) VALUES
-(10, 2, 9, 'JD3BPL', 0, ''),
-(11, 1, 9, 'X4WZ7J', 0, ''),
-(12, 3, 9, 'FUZY8D', 0, '');
-
 -- --------------------------------------------------------
 
 --
@@ -73,16 +64,6 @@ CREATE TABLE `tbl_kegiatan` (
   `ig` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tbl_kegiatan`
---
-
-INSERT INTO `tbl_kegiatan` (`idKegiatan`, `nama`, `katagori`, `tema`, `tema1`, `tema2`, `tanggal`, `jam`, `wilayah`, `tempat`, `status_kegiatan`, `kapasistas_peserta`, `alamat`, `kontak`, `poster`, `fb`, `tw`, `ig`) VALUES
-(1, 'Festik 2019', 'Workshop', 'LITERASI DIGITAL & PERKEMBANGAN', 'UMKM INDONESIA', '', 'Sabtu / 23 November 2019', '09:00:00 WIB', 'Pangkal Pinang', 'Pangkal Pinang', 1, 1, 'Alamat Lengkap Tempat Kegiatan Berlangsung', '082161677331', '-', '-', '-', '-'),
-(2, 'Festik 2012', 'SEMINAR', 'LITERASI DIGITAL & PERKEMBANGAN\r\n', 'UMKM INDONESIA', '', 'Sabtu / 23 November 2019', '09:00:00 WIB', 'Pangkal Pinang', 'Pangkal Pinang', 1, 500, 'Alamat Lengkap Tempat Kegiatan Berlangsung', '082161677331', '-', '-', '-', '-'),
-(3, 'Festik 2019', 'WORKSHOP', 'PENGGUNAAN LINUX SEBAGAI', 'MEDIA PEMBELAJARAN INTERAKTIF', 'DI RUANG KELAS BAGI SISWA', 'KAMIS / 23 November 2019', '09:00:00 WIB', 'JAKARTA', 'JAKARTA', 1, 500, 'Alamat Lengkap Tempat Kegiatan Berlangsung', '082161677331', '-', '-', '-', '-'),
-(4, 'Festik 2019', 'WORKSHOP', 'untuk hidup', 'menjadi lebih baik dan dinamis', 'perjuanan untuk makan', 'Jumat / 23 November 2019', '09:00:00 WIB', 'Surabaya', 'JAKARTA', 1, 500, 'Alamat Lengkap Tempat Kegiatan Berlangsung', '082161677331', '-', '-', '-', '-');
-
 -- --------------------------------------------------------
 
 --
@@ -109,10 +90,8 @@ CREATE TABLE `tbl_peserta` (
 --
 
 INSERT INTO `tbl_peserta` (`idPeserta`, `namaPeserta`, `email`, `telepon`, `wilayah`, `fb`, `tw`, `ig`, `tgldaftar`, `foto`, `password`, `level`) VALUES
-(7, 'fakrullah Maulana', 'email@gmail.com', 'operator', 'aceh', '', '', '', 1572643791, 'default.jpeg', '$2y$10$SNOpans5hlJtbuQQZyMyGetlm8uoH6HYcvwsQhPYARSKBFhutEdAy', 2),
-(8, 'Fakrullah maulana', 'emailku@gmaill.com', '00', 'Aceh', '', '', '', 1572674880, 'default.jpeg', '$2y$10$t0x9uu.U6qwJQJG9JzwsvebMj5m0upfEcBhP3gTNsirG8Mr0HuwDi', 1),
-(9, 'Nama Peserta Yang Panjang', 'emi@kdl.com', 'user', 'Adas', '', '', '', 1572674961, 'default.jpeg', '$2y$10$lFwCwwQBxPxdU3eOelFxvu5Wxjdlko0xUKZC8kooTzaza1hj8C4Xa', 1),
-(10, 'Ganteng', 'wqe@dkk.com', '6666', 'Ajak', '', '', '', 1572769784, 'default.jpeg', '$2y$10$VpgtQSTNrJ19CcjAytRhTO/72cAFLbsnwr3VmvUVP7omNtiI0LhGG', 1);
+(1, 'Nama Peserta Yang Panjang demo', 'emi@kdl.com', 'user', 'Adas', '', '', '', 1572674961, 'default.jpeg', '$2y$10$lFwCwwQBxPxdU3eOelFxvu5Wxjdlko0xUKZC8kooTzaza1hj8C4Xa', 1),
+(2, 'Panitia', 'email@gmail.com', 'operator', 'Babel', '', '', '', 1572643791, 'default.jpeg', '$2y$10$SNOpans5hlJtbuQQZyMyGetlm8uoH6HYcvwsQhPYARSKBFhutEdAy', 2);
 
 --
 -- Indexes for dumped tables
@@ -144,19 +123,19 @@ ALTER TABLE `tbl_peserta`
 -- AUTO_INCREMENT for table `tbl_aktivaitas`
 --
 ALTER TABLE `tbl_aktivaitas`
-  MODIFY `idAktivitas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idAktivitas` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_kegiatan`
 --
 ALTER TABLE `tbl_kegiatan`
-  MODIFY `idKegiatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idKegiatan` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_peserta`
 --
 ALTER TABLE `tbl_peserta`
-  MODIFY `idPeserta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idPeserta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
