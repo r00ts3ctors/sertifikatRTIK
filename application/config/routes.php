@@ -26,3 +26,7 @@ $route['daftar/(:num)'] = 'Dashboard/home/takePelatihan/$1';
 $route['check/(:any)'] = 'Welcome/validasi/$1';
 $route['checkpost'] = 'Welcome/validasipost';
 // $route['checks'] = 'Welcome/index/validasipost';
+
+// router administrator
+$route['absensi'] = 'Admin/Home/daftar';
+// Admin/Home/daftar

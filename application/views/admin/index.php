@@ -25,8 +25,8 @@
 
   <!-- Page Wrapper -->
   <div id="wrapper">
-
-    <?php $this->load->view('menu'); ?>
+<!-- Admin/Home/daftar -->
+    <?php $this->load->view('admin/menu'); ?>
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">

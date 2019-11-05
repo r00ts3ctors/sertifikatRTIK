@@ -35,7 +35,7 @@ class Sertifikat extends CI_Controller{
     // untuk pelatihan
     $keyword = $this->input->post('kegiatan');
     $this->db->like('email', $keyword);
-    $query = $this->db->query("SELECT * FROM tbl_kegiatan WHERE tema LIKE '%$keyword%' ")->result_array();
+    $query = $this->db->query("SELECT * FROM tbl_kegiatan WHERE tema LIKE '%$keyword%' OR tema1 LIKE '%$keyword%' OR tema2 LIKE '%$keyword%' ")->result_array();
     //$query = $this->db->get('tbfeedback');
 
     $data = array(
@@ -47,9 +47,5 @@ class Sertifikat extends CI_Controller{
    }
 
 
-   public function downloadSertifikat(){
-
-
-   }
 
 }

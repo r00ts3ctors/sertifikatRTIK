@@ -1,3 +1,5 @@
+<?php error_reporting(0) ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -20,7 +22,17 @@
         <h1 class="text-danger mt-5">VALIDASI SERTIFIKAT</h1>
       </div>
       <div class="row">
-        <p><strong><h3> No. Sertifkat <?php echo $nosertifikat; ?>  <strong class="text-success">  VALID </strong></h3></strong></p>
+        <?php
+        $noser = "";
+        if ($nosertifikat) {
+        $noser = $nosertifikat;
+        }
+        else {
+          die();
+        }
+
+         ?>
+        <p><strong><h3> No. Sertifkat <?php echo $noser; ?>  <strong class="text-success">  VALID </strong></h3></strong></p>
       </div>
 
       <div class="row">
@@ -44,7 +56,7 @@
             </tr>
             <tr>
               <th scope="row"><h3>No </h3> </th>
-              <td><h3><strong class="text-success"><?php echo $nosertifikat ?></strong></h3></td>
+              <td><h3><strong class="text-success"><?php echo $noser ?></strong></h3></td>
             </tr>
             <tr>
               <th scope="row"></th>
