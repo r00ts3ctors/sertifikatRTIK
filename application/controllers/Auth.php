@@ -42,10 +42,6 @@ class Auth extends CI_Controller{
           'email' => $user['email'] ,
           'telepon' => $user['telepon'] ,
           'wilayah' => $user['wilayah'] ,
-          'facebook' => $user['fb'] ,
-          'twitter' => $user['tw'] ,
-          'instagram' => $user['ig'] ,
-          'instagram' => $user['ig'] ,
           'level' => $user['level'] ,
           'foto' => $user['foto'] ,
           'status' => 'login',
@@ -56,11 +52,7 @@ class Auth extends CI_Controller{
           $this->session->set_flashdata('msg', '<div class="alert alert-warning"> Selamat Datang Kembali <strong> '.$data['nama'].' </strong> Selamat Bertugas semoga menjadi Amal yang baik.</div>');
           redirect('Admin/Home');
         }
-        elseif ($user['level'] == 3) {
-          $this->session->set_userdata($data);
-          $this->session->set_flashdata('msg', '<div class="alert alert-warning"> Selamat Datang Kembali <strong> '.$data['nama'].' </strong> Pastikan anda mengikuti semua pelatihan yang berkualitas di sini.</div>');
-          redirect('siadmin');
-        }
+
         else {
           $this->session->set_userdata($data);
           $this->session->set_flashdata('msg', '<div class="alert alert-warning"> Selamat Datang Kembali <strong> '.$data['nama'].' </strong> Pastikan anda mengikuti semua pelatihan yang berkualitas di sini.</div>');
@@ -70,13 +62,13 @@ class Auth extends CI_Controller{
 
       }
       else {
-        $this->session->set_flashdata('msg', '<div class="alert alert-danger"> Password Tidak Salah </div>');
-        redirect('Auth');
+        $this->session->set_flashdata('msg', '<div class="alert alert-danger"> Password  Salah </div>');
+        redirect('Auth/index');
       }
     }
     else {
-      $this->session->set_flashdata('msg', '<div class="alert alert-danger"> No Telepon Tidak Salah </div>');
-      redirect('Auth');
+      $this->session->set_flashdata('msg', '<div class="alert alert-danger"> No Telepon  Salah </div>');
+      redirect('Auth/index');
     }
 
   }
@@ -119,13 +111,12 @@ class Auth extends CI_Controller{
       );
       $this->db->insert('tbl_peserta', $dataRegister);
       $this->session->set_flashdata('msg', '<div class="alert alert-success"> Selamat anda Terdaftar silahkan login </div>');
-      redirect('Auth');
+      redirect('Auth/index');
     }
   }
 
-  public function stafrtik(){
-    // code...
-  }
+
+
   public function logout()
   {
     $this->session->sess_destroy();

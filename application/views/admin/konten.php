@@ -1,77 +1,88 @@
+
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+
+  <h1 class="h3 mb-0 text-gray-800">Dashboard Administrator</h1>
+
+
+</div>
+<?=$this->session->flashdata('msg') ?>
+
 <div class="row">
-  <div class="col-lg-12 py-4">
-    <form class="form-control" action="<?php echo base_url('Admin/Home/prosesPelatihan') ?>" method="post">
-      <label>Nama Kegiatan</label>
-      <input type="text" class="form-control" name="nama" value="Festik 2019 Pangkal Pinang">
-      <label>Katagori</label>
-      <select class="form-control" name="katagori">
-        <option value="WORKSHOP">Workshop</option>
-        <option value="SEMINAR">Seminar</option>
-      </select>
-      <div class="row">
-        <div class="col-lg-4">
-          <label>Tema Kegiatan </label>
-          <input type="text" class="form-control" name="tema1"
-           placeholder="Hanya 5 Kata max - Pertama">
-          <?=form_error('tema1') ?>
-        </div>
-        <div class="col-lg-4">
-          <label>Tema Kegiatan</label>
-          <input type="text" class="form-control" name="tema2"
-          placeholder="Sambungan 4 Kata max Kedua">
-        </div>
-        <div class="col-lg-4">
-          <label>Tema Kegiatan</label>
-          <input type="text" class="form-control" name="tema3"
-          placeholder="Sambungan 4 kata max Ketiga">
+  <!-- Earnings (Monthly) Card Example -->
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Sertifikat</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">12</div>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <div class="row">
-        <div class="col-lg-6">
-          <label>Jam Kegiatan</label>
-          <input type="text" class="form-control" name="jam" placeholder="14:00 WIB" >
-          <?=form_error('jam') ?>
-          <label>Kontak Panitia</label>
-          <input type="text" class="form-control" name="kontak" placeholder="Kontak Panitia" >
-          <?=form_error('kontak') ?>
-        </div>
-        <div class="col-lg-6">
-          <label>Tanggal Kegiatan</label>
-          <input type="text" class="form-control" name="tgl" placeholder="Sabtu / 22 November 2019">
-          <?=form_error('tgl') ?>
-          <label>Kapasitas</label>
-          <input type="text" class="form-control" name="kapasitas" placeholder="100" >
-          <?=form_error('kapasitas') ?>
+  <!-- Earnings (Monthly) Card Example -->
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-success shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Kegiatan Tersedia</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">12</div>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <label>Alamat</label>
-      <input type="text" class="form-control" name="alamat" placeholder="Tempat Kegiatan" >
-      <?=form_error('alamat') ?>
-      <div class="row">
-        <div class="col-lg-4">
-          <label>Facebook</label>
-          <input type="text" class="form-control" name="fb" placeholder="USERNAME" >
-        </div>
-        <div class="col-lg-4">
-          <label>IG</label>
-          <input type="text" class="form-control" name="ig" placeholder="USERNAME">
-
-        </div>
-        <div class="col-lg-4">
-          <label>Twitter</label>
-          <input type="text" class="form-control" name="tw" placeholder="USERNAME" >
-
+  <!-- Earnings (Monthly) Card Example -->
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-info shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Kegiatan Berlallu</div>
+            <div class="row no-gutters align-items-center">
+              <div class="col-auto">
+                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50</div>
+              </div>
+              <div class="col">
+                <div class="progress progress-sm mr-2">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+          </div>
         </div>
       </div>
-      <hr>
-      <button type="submit" class="btn btn-sm btn-warning">Proses Tambah Kegiatan</button>
-    </form>
+    </div>
+  </div>
 
+  <!-- Pending Requests Card Example -->
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-warning shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Kegiatan Berjalan</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-comments fa-2x text-gray-300"></i>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<?php
-
-
-?>

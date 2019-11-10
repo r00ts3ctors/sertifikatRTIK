@@ -9,7 +9,7 @@ class Home extends CI_Controller{
     // IDEA: jika bukan operator silahkan keluar
     if ($this->session->userdata('level') != 2) { redirect('Auth/logout'); }
     $this->load->model( array('Modeloperator' => 'operator', ));
-      $this->load->library('form_validation');
+    $this->load->library('form_validation');
   }
 
 
