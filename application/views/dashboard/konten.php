@@ -117,7 +117,8 @@
                               <td class="text-center">
                                 <?php
                                   if ($v->status == 0) {
-                                    echo "<span class='badge badge-danger'>Belum Hadir</span>";
+                                    echo "<span class='badge badge-danger'>Belum Hadir</span> <br />";
+                                    echo "No Register : <strong>" . $v->nosertifikat . "</strong>";
                                   }
                                   else { ?>
                                     <a href="<?= base_url('nosertifikat/').$v->nosertifikat ?>" target="_blank">

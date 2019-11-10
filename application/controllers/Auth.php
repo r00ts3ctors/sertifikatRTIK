@@ -86,7 +86,7 @@ class Auth extends CI_Controller{
 
   public function registrasi()
   {
-    $this->form_validation->set_rules('nama', 'Nama Lengkap', 'trim|required|alpha');
+    $this->form_validation->set_rules('nama', 'Nama Lengkap', 'trim|required');
     $this->form_validation->set_rules('tlp', 'No. Telepon', 'trim|required|is_unique[tbl_peserta.telepon]',[
       'is_unique' => 'Sudah Digunakan',
       'required' => 'Wajib Ada',
@@ -95,10 +95,11 @@ class Auth extends CI_Controller{
       'is_unique' => 'Email Sudah Terdaftar',
       'valid_email' => 'Email Tidak Benar'
     ]);
-    $this->form_validation->set_rules('kota', 'Kota Asal', 'trim|required|alpha');
-    $this->form_validation->set_rules('password1', 'Password', 'trim|required|min_length[5]|max_length[8]|matches[password2]', [
+    $this->form_validation->set_rules('kota', 'Kota Asal', 'trim|required');
+    $this->form_validation->set_rules('password1', 'Password', 'trim|required|min_length[5]|max_length[15]|matches[password2]', [
       'matches' => 'Pass Tidak Sama',
       'min_length' => 'Pass Terlalu Pendek',
+      'max_length' => 'Pass Terlalu Panjang',
     ]);
 
     $this->form_validation->set_rules('password2', 'Password', 'trim|required|matches[password1]');

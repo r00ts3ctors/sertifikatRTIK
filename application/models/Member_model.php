@@ -75,5 +75,17 @@ class Member_model extends CI_Model{
     return $this->db->get('tbl_kegiatan')->result_array();
   }
 
+  function updateJumlahKapasitas($id,$sisa)
+  {
+      $data = array( 'kapasistas_peserta' => $sisa, );
+      $this->db->where('idKegiatan', $id);
+      $this->db->update('tbl_kegiatan', $data);
+    }
+
+    public function FunctionName($value='')
+    {
+      // code...
+    }
+
 
 }
