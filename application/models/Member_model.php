@@ -82,10 +82,7 @@ class Member_model extends CI_Model{
       $this->db->update('tbl_kegiatan', $data);
     }
 
-    public function FunctionName($value='')
-    {
-      // code...
-    }
+
 
 
 }

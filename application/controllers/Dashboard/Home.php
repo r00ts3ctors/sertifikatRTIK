@@ -46,9 +46,12 @@ class Home extends CI_Controller{
     $peserta = $this->db->get_where('tbl_peserta', ['idPeserta' => $this->session->userdata('idPeserta')])->row_array();
     $kegiatan = $this->db->get_where('tbl_kegiatan', ['idKegiatan' => $id])->row_array();
 
+    $sisa = $kegiatan['kapasistas_peserta'] - 1;
+
     $this->db->where('idKegiatan =', $id);
     $this->db->where('idPeserta =',   $peserta['idPeserta']);
     $aktivitasStatus = $this->db->get('tbl_aktivaitas')->num_rows();
+
 
     if ($aktivitasStatus == 0) {
       $dataAktivitas = array(
@@ -58,6 +61,7 @@ class Home extends CI_Controller{
         'status' => 0,
       );
       $this->db->insert('tbl_aktivaitas', $dataAktivitas);
+      $this->Member_model->updateJumlahKapasitas($id,$sisa);
       $this->session->set_flashdata('msg', '<div class="alert alert-success">Selamat Pendaftaran Kegiatan Berhasil.</div>');
       redirect('register');
     }
