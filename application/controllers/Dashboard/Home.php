@@ -76,7 +76,7 @@ class Home extends CI_Controller{
 
   public function mySertifikat()
   {
-
+    //  kecepatan ngoding tim turun 75% perlu cara tambahan
     $datasertifikat = array(
       'nama' => ucfirst(strtolower('Maulana maulana')),
       'sebagai' => 'PESERTA 20 November 2019',
@@ -90,7 +90,7 @@ class Home extends CI_Controller{
   }
 
   public function listSertifikat() {
-    $user['user'] = $this->db->get_where('tbl_peserta', ['telepon' => $this->session->userdata['telepon']])->row_array();
+    $user['user'] = $this->db->get_where('tbl_peserta', ['idPeserta' => $this->session->userdata['idPeserta']])->row_array();
     $data = array(
       'konten' => 'dashboard/list_pelatihan',
       'datasertifkat' => $this->Member_model->listdatasertifikat($user['user']['idPeserta']),

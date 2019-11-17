@@ -16,38 +16,38 @@
     <a class="nav-link" href="<?php echo base_url('Admin/Home') ?>">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Dashboard</span></a>
-  </li>
+    </li>
 
-  <!-- Divider -->
-  <hr class="sidebar-divider">
+    <!-- Divider -->
+    <hr class="sidebar-divider">
 
-  <!-- Heading -->
-  <div class="sidebar-heading">
-    Fitur eSertifikat
-  </div>
-
-  <!-- Nav Item - Pages Collapse Menu -->
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-      <i class="fas fa-fw fa-cog"></i>
-      <span>Sertifikat</span>
-    </a>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-      <div class="bg-white py-2 collapse-inner rounded">
-        <!-- <h6 class="collapse-header">List:</h6> -->
-        <a class="collapse-item" href="<?php echo base_url('absensi') ?>">Absensi</a>
-        <a class="collapse-item" href="<?php echo base_url('') ?>">##</a>
-      </div>
+    <!-- Heading -->
+    <div class="sidebar-heading">
+      Fitur eSertifikat
     </div>
-  </li>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        <i class="fas fa-fw fa-cog"></i>
+        <span>Sertifikat</span>
+      </a>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <!-- <h6 class="collapse-header">List:</h6> -->
+          <a class="collapse-item" href="<?php echo base_url('absensi') ?>">Absensi</a>
+          <a class="collapse-item" href="<?php echo base_url('addPelatihan') ?>">Tambah Kegiatan</a>
+        </div>
+      </div>
+    </li>
 
 
-  <hr class="sidebar-divider d-none d-md-block">
+    <hr class="sidebar-divider d-none d-md-block">
 
-  <!-- Sidebar Toggler (Sidebar) -->
-  <div class="text-center d-none d-md-inline">
-    <button class="rounded-circle border-0" id="sidebarToggle"></button>
-  </div>
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+      <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
 
-</ul>
-<!-- End of Sidebar -->
+  </ul>
+  <!-- End of Sidebar -->

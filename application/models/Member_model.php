@@ -33,6 +33,7 @@ class Member_model extends CI_Model{
     $this->db->from('tbl_aktivaitas');
     $this->db->join('tbl_peserta', 'tbl_peserta.idPeserta = tbl_aktivaitas.idPeserta', 'inner');
     $this->db->join('tbl_kegiatan', 'tbl_kegiatan.idKegiatan = tbl_aktivaitas.idKegiatan', 'inner');
+    $this->db->where('tbl_peserta.idPeserta',$id);
     return   $query = $this->db->get()->result();
     // return   $query = $this->db->get()->result();
   }

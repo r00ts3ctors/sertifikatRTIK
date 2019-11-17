@@ -58,16 +58,20 @@
             <tbody>
               <?php
               $nomor = 1;
-              foreach ($datasertifkat as $v) { ?>
+              foreach ($datasertifkat as $v) {
+
+
+                ?>
                 <tr>
                   <td class="text-center"><?= $nomor++; ?></td>
                   <td><?=$v->namakegiatan?></td>
                   <td><?=ucfirst(strtolower($v->tema)) ?></td>
                   <td class="text-center">
                     <?php
-                      if ($v->status == 0) {
+                      if ($v->status == 0 && $v->idPeserta == $this->session->userdata('idPeserta')) {
                         echo "<button class='btn btn-info btn-sm'>Pandding</button>";
                       }
+
                       else { ?>
                         <a href="<?= base_url('nosertifikat/').$v->nosertifikat ?>" target="_blank" class="btn btn-success btn-sm">View</a>
                       <?php }

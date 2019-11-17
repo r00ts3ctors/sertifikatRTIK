@@ -29,3 +29,6 @@ $route['checkpost'] = 'Welcome/validasipost';
 
 // router admin
 $route['absensi'] = 'Admin/Home/daftar';
+$route['admin'] = 'Admin/Home/index';
+$route['addPelatihan'] = 'Admin/Home/addpelatihan';
+$route['proses'] = 'Admin/Home/ganteng';

@@ -1,3 +1,9 @@
+<div class="row ">
+  <center>
+  <a href="<?= base_url('Admin/Home/pelatihan/#absensi') ?>" class="btn btn-lg btn-primary">ABSENSI PESERTA</a>
+</center>
+</div>
+<br /><hr />
 
           <div class="row">
             <div class="container-fluid">

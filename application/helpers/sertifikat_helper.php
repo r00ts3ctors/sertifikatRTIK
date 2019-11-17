@@ -14,7 +14,7 @@ function cetak($datasertifikat)
 {
   header('Content-type: image/jpeg');
   // code...
-  $template = imagecreatefromjpeg(base_url('assets/template/Tempalte2019.jpg')); // posisi Sertifikat Master
+  $template = imagecreatefromjpeg(base_url('assets/template/UpdateTemplate.jpg')); // posisi Sertifikat Master
   // warna huruf
   $hitam = imagecolorallocate($template, 0, 0, 0); // warna2 huruf yang akan di pakai
   $warna_nama = imagecolorallocate($template, 0, 191, 255);
@@ -38,7 +38,7 @@ function cetak($datasertifikat)
 
   imagettftext($template, 240, 0, 560, 1240, $warna_nama, $huruf_nama, $text);
   imagettftext($template, 50, 0, 1620, 1391, $hitam, $huruf_peserta, $text1);
-  imagettftext($template, 50, 0, 1120, 1470, $hitam, $huruf_tanggal, $text2);
+  imagettftext($template, 50, 0, 1120, 1479, $hitam, $huruf_tanggal, $text2);
   imagettftext($template, 65, 0, 590, 1720, $hitam, $huruf_tema, $text1_tema);
   imagettftext($template, 65, 0, 590, 1830, $hitam, $huruf_tema, $text2_tema);
   imagettftext($template, 65, 0, 590, 1940, $hitam, $huruf_tema, $text3_tema);

@@ -15,11 +15,6 @@ class Modeloperator extends CI_Model{
   }
 
 
-
-
-
-
-
   // IDEA: untuk menampilkan semua data pelatihan yang tersedia
   public function listingPelatihan(){
     // Listing pelatihan yang tersedia tbl_kegiatan
@@ -29,6 +24,13 @@ class Modeloperator extends CI_Model{
     // $q = $this->db->get('tbl_kegiatan', 20)->row_array()['nama'];
   }
 
+  public function addKegiatan($data)
+  {
+
+    $this->db->insert('tbl_kegiatan', $data);
+
+    // code...
+  }
 
   public function DaftarPeserta($id)
   {

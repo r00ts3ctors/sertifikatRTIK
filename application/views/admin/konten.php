@@ -86,3 +86,35 @@
     </div>
   </div>
 </div>
+
+<div class="row">
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Nama Lengnkap</th>
+            <th>No. Telepon</th>
+            <th>Alamat Email</th>
+
+            <th>#</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <?php foreach ($datapeserta as $key): ?>
+            <tr>
+              <td><?php echo $key['namaPeserta'] ?></td>
+              <td><?php echo $key['telepon'] ?></td>
+              <td><?php echo $key['email'] ?></td>
+
+              <td><?= anchor('Admin/Home/detailPeserta/'.$key['idPeserta'], 'Detail', "class='btn btn-sm btn-info'"); ?></td>
+            </tr>
+
+          <?php endforeach; ?>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
