@@ -6,7 +6,7 @@ if (!defined('BASEPATH'))
 class Kegiatan_model extends CI_Model
 {
 
-    public $table = 'kegiatan';
+    public $table = 'tbl_kegiatan';
     public $id = 'idKegiatan';
     public $order = 'DESC';
 
@@ -15,20 +15,21 @@ class Kegiatan_model extends CI_Model
         parent::__construct();
     }
 
-    // get all
     function get_all()
     {
         $this->db->order_by($this->id, $this->order);
         return $this->db->get($this->table)->result();
     }
 
+
     // get data by id
+
     function get_by_id($id)
     {
         $this->db->where($this->id, $id);
         return $this->db->get($this->table)->row();
     }
-    
+
     // get total rows
     function total_rows($q = NULL) {
         $this->db->like('idKegiatan', $q);

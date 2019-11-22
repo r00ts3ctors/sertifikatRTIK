@@ -37,6 +37,7 @@
           <!-- <h6 class="collapse-header">List:</h6> -->
           <a class="collapse-item" href="<?php echo base_url('absensi') ?>">Absensi</a>
           <a class="collapse-item" href="<?php echo base_url('addPelatihan') ?>">Tambah Kegiatan</a>
+          <a class="collapse-item" href="<?php echo base_url('Admin/Kegiatan') ?>">List Kegiatan</a>
         </div>
       </div>
     </li>
